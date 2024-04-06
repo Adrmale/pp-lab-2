@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class zadanie {
@@ -23,9 +24,12 @@ public class zadanie {
         }
 
         System.out.println("Wprowadzone oceny:");
-        double sumaOcen = 0;
         for (double ocena : oceny) {
             System.out.println(ocena);
+        }
+
+        double sumaOcen = 0;
+        for (double ocena : oceny) {
             sumaOcen += ocena;
         }
 
@@ -34,6 +38,19 @@ public class zadanie {
         double sredniaOcen = sumaOcen / liczbaOcen;
         System.out.println("Średnia ocen: " + sredniaOcen);
 
+        Arrays.sort(oceny);
+        double mediana = obliczMediane(oceny);
+        System.out.println("Mediana ocen: " + mediana);
+
         scanner.close();
+    }
+
+    public static double obliczMediane(double[] tablica) {
+        int dlugosc = tablica.length;
+        if (dlugosc % 2 == 0) {
+            return (tablica[dlugosc / 2 - 1] + tablica[dlugosc / 2]) / 2.0;
+        } else {
+            return tablica[dlugosc / 2];
+        }
     }
 }
