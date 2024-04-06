@@ -29,4 +29,3 @@ public class zadanie {
         scanner.close();
     }
 }
-4
