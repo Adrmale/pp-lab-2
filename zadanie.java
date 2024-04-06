@@ -10,8 +10,16 @@ public class zadanie {
         double[] oceny = new double[liczbaOcen];
 
         for (int i = 0; i < liczbaOcen; i++) {
-            System.out.print("Podaj ocenę " + (i + 1) + ": ");
-            oceny[i] = scanner.nextDouble();
+            double ocena;
+            do {
+                System.out.print("Podaj ocenę " + (i + 1) + ": ");
+                ocena = scanner.nextDouble();
+                if (ocena <= 0 || ocena >= 6) {
+                    System.out.println("Błędna ocena! Podaj dodatnią ocenę mniejszą od 6.");
+                }
+            } while (ocena <= 0 || ocena >= 6);
+
+            oceny[i] = ocena;
         }
 
         System.out.println("Wprowadzone oceny:");
