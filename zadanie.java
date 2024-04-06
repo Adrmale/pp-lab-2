@@ -14,10 +14,10 @@ public class zadanie {
             do {
                 System.out.print("Podaj ocenę " + (i + 1) + ": ");
                 ocena = scanner.nextDouble();
-                if (ocena <= 0 || ocena >= 6) {
+                if (ocena <= 0 || ocena > 6) {
                     System.out.println("Błędna ocena! Podaj dodatnią ocenę mniejszą od 6.");
                 }
-            } while (ocena <= 0 || ocena >= 6);
+            } while (ocena <= 0 || ocena > 6);
 
             oceny[i] = ocena;
         }
