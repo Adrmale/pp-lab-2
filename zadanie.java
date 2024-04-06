@@ -1,25 +1,27 @@
-
 import java.util.Scanner;
-public class zad_1 {
+
+public class zadanie{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Podaj oceny z Polskiego, Matematyki i Angielskiego:");
+        System.out.println("Podaj liczbe ocen do wprowadzenia:");
+        int liczbaOcen = scanner.nextInt();
 
-        System.out.print("Polski: ");
-        double ocena_polski = scanner.nextDouble();
+        double[] oceny = new double[liczbaOcen];
 
-        System.out.print("Matematyka: ");
-        double ocena_matematyka = scanner.nextDouble();
+        for (int i = 0; i < liczbaOcen; i++) {
+            System.out.print("Podaj ocenę " + (i + 1) + ": ");
+            oceny[i] = scanner.nextDouble();
+        }
 
-        System.out.print("Angielski: ");
-        double ocena_angielski = scanner.nextDouble();
+        double sumaOcen = 0;
+        for (double ocena : oceny) {
+            sumaOcen += ocena;
+        }
 
-        double srednia_ocen = (ocena_polski + ocena_matematyka + ocena_angielski) / 3;
-
-        System.out.print("Średnia ocen: " + srednia_ocen);
+        double sredniaOcen = sumaOcen / liczbaOcen;
+        System.out.println("Średnia ocen: " + sredniaOcen);
 
         scanner.close();
     }
-
 }
